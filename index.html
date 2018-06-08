@@ -11,18 +11,45 @@
 	  <script language="Javascript">
       function getData()
       {
-		  let url = "https://shipt-zip-code-test-api.herokuapp.com/api/zip_codes/" + document.getElementById("pinText").value; 
-		  var xhttp = new XMLHttpRequest();
-          xhttp.open("GET", url, false);
-          xhttp.send();
-		  var data = "";
-          var response = JSON.parse(xhttp.responseText);
-	      response.stores.forEach(function(element) {
-          console.log(element.name);
-		  data = data +"  "+element.name; 
-          });
-		  
-		  document.getElementById("zipval").value = data;
+		let url = "https://shipt-zip-code-test-api.herokuapp.com/api/zip_codes/" + document.getElementById("pinText").value; 
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", url, false);
+		xhttp.send();
+		var data = "";
+		var response = JSON.parse(xhttp.responseText);
+		var table = document.getElementById("resultTable");
+		
+			//clear table 
+			while(table.hasChildNodes())
+			{
+			   table.removeChild(table.firstChild);
+			}
+			var rowNum=-1;
+			var colNum=0;
+			//display hidden elements
+			var label = document.getElementById("zipval");
+			label.classList.remove("hidden");
+			var bn = document.getElementById("gBtn");
+			bn.classList.remove("hidden");
+			response.stores.forEach(function(element) {
+			console.log(element.name);
+			// create rows and column, max 3 columns in a row 
+			var row;
+			if (colNum % 3 == 0) {
+				rowNum++;
+				row = table.insertRow(rowNum);
+				row.className='col-xs-12';
+				colNum=0;
+			} else {
+				row = table.rows[rowNum];
+			}
+			var cell = row.insertCell(colNum);
+			cell.className='col-xs-4';
+			var d = new Date(element.launch_date);
+			var lDate= d.getFullYear()+ "/"+ d.getMonth();
+			cell.innerHTML = "<p><b>" + element.name + "</b><br/><br/> <small>coming " + lDate + "</small></p>"+ "<br/>";
+			colNum++;
+		  });
       }
     </script>	
 	</head>
@@ -72,19 +99,12 @@
 				
 				<section id="zipResult">
 					<div class="row">
-						<div class="col-md-10 col-md-offset-1">
-							<!--<label id="zipval" value="Hello">DELEVERING FROM:</label>
-							<table>
-								<tr>
-									<th id="storeName"><h5>element.name</h5></th>
-								</tr>
-								<tr>
-									<td id="launchDate">element.date</td>
-								</tr>
-							</table>
+						<div class="col-xs-10 col-xs-offset-1">
+							<label id="zipval" class="hidden">DELEVERING FROM:</label>
+							<table id="resultTable"></table>
 							<div class="col-sm-6 col-sm-offset-3">
-								<button class="button-green" href="#" aria-label="Get Started">Get Started</button>
-							</div>-->
+								<button id="gBtn" class="button-green hidden" href="#" aria-label="Get Started">Get Started</button>
+							</div>
 						</div>
 					</div>
 				</section>

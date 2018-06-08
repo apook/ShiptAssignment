@@ -64,6 +64,24 @@
 		width: 100%;
 		
 	}
+	table {
+		width: 100%;
+		margin:auto;
+	}
+	td {
+		height: 50px;
+		text-align: center;
+	}
+	tr, td {
+		padding: 15px;
+	}
+	tr{
+		float:none !important;
+	}
+	.cell{
+		padding:2%;
+		margin:auto;
+	}
 	.hero .hero-container {
 		background-image: url("img/HERO Copy 4@2x.png");
 		height: calc(100vh - 113px);
