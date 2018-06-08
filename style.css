@@ -1,0 +1,140 @@
+
+	section{
+		text-align: center;
+		margin: 10px;
+	}
+	h1{
+		text-align:center;
+		margin:35px;
+	}
+	h3{
+		margin-bottom:30px !important;
+	}
+	header{
+		height:fit-content;
+	}
+	footer{
+		background: #414042;
+		color:#fff;
+		padding: 30px 50px;
+		text-align: center;
+	}
+	.offers h5{
+		margin: 0 auto;
+		max-width: 1080px;
+		width: 100%;
+		padding-left: 24px;
+		padding-right: 24px;
+		color: #fff;
+		font-size: 11px;
+		letter-spacing: 1.5px;
+		line-height: 28px;
+		text-transform: uppercase;
+	}
+	.offers{
+		background-color: #414042;
+		display: block;
+		height: 30px;
+		text-align: center;
+		width: 100%;
+		-webkit-transition: background-color .3s ease;
+		-o-transition: background-color .3s ease;
+		transition: background-color .3s ease;
+	}
+	.navbar-inverse {
+		background-color: #FFF;
+		border-color: #080808;
+	}
+	.btn-bg{
+		background-color: #71b045;
+		color:#fff;
+		padding: 16px 0 15px;
+		width: 120px;
+		display: inline-block;
+		line-height: 20px;
+		box-shadow: 0 5px 25px rgba(0,0,0,.05);
+		border: 0;
+		border-radius: 2px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.topnav{
+		margin: 0 auto;
+		max-width: 1080px;
+		width: 100%;
+		
+	}
+	.hero .hero-container {
+		background-image: url("img/HERO Copy 4@2x.png");
+		height: calc(100vh - 113px);
+	}
+	.button-green {
+		box-shadow: 0 5px 25px rgba(0,0,0,.05);
+		border: 0;
+		border-radius: 2px;
+		color: #fff;
+		font-size: 11px;
+		letter-spacing: 1.5px;
+		line-height: 2;
+		padding: 13px 36px;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #71b045;
+	}
+	.hero .hero-full-content {
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%,-50%);
+		-o-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		position: absolute;
+		background: 0;
+		padding: 0 24px;
+		color:#fff;
+	}
+	.hero p{
+		color:#fff;
+	}
+	.center {
+		margin: auto;
+	}
+	.zipField{
+		/*/background: url(img/mapIcon.png) no-repeat scroll 7px 7px;
+		padding-left:30px;*/
+		border: 0;
+		border-radius: 2px 0 0 2px;
+		font-size: 11px;
+		line-height: 2;
+		padding: 13px 36px;
+	}
+	.zip {
+		position: relative;
+		text-indent: 20px;
+		line-height: 2;
+		padding: 10px 30px;
+		box-shadow: 0 5px 25px rgba(0,0,0,.05);
+		border: 0;
+		border-radius: 2px;
+		color:#000;
+	}
+	.icon { 
+		position: absolute;
+		top: 35%;
+		left: 35%;
+		color: #9E9E9E;
+		display: block;
+		position: absolute;
+		top: 20px;
+		left: 16px;
+		height: 20px;
+		width: 20px;
+		font-weight: 400;
+	}
+	.navbar-nav>li>a {
+		margin-top:10px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}

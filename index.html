@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Bootstrap Example</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="style.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script language="Javascript">
+      function getData()
+      {
+		  let url = "https://shipt-zip-code-test-api.herokuapp.com/api/zip_codes/" + document.getElementById("pinText").value; 
+		  var xhttp = new XMLHttpRequest();
+          xhttp.open("GET", url, false);
+          xhttp.send();
+		  var data = "";
+          var response = JSON.parse(xhttp.responseText);
+	      response.stores.forEach(function(element) {
+          console.log(element.name);
+		  data = data +"  "+element.name; 
+          });
+		  
+		  document.getElementById("zipval").value = data;
+      }
+    </script>	
+	</head>
+	
+	<body>
+		<div class="container-fluid">
+				<header>
+					<a class="offers" href="#"><h5>Get $50 + $15 CREDIT*</h5></a>
+					<nav class="navbar topnav">
+						<div class="container-fluid">
+							<div class="navbar-header col-xs-6 col-md-4">
+								<a class="navbar-brand" href="#"><img alt="header" class="img-responsive" src="img/shipt-logo.png" /></a>
+							</div>
+							<div class="col-xs-2 col-xs-offset-3 col-md-4 col-md-offset-4 ">
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="#" class="button-green btn-bg">Sign Up</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</header>
+				
+				<!-- red bg -->
+				<section class="hero">
+					<div class="row">
+						<div class="hero-container col-md-10 col-md-offset-1" role="banner">
+							<article class="hero-full-content">
+								<h1>Target Exclusive Offer</h1>
+								<h6>$49 membership (reg. $99) + $15 credit with qualifing purchase</h6>
+								<div class="row zip-check">
+									<form name="zip" class="form-zip-check">
+									  <input type="tel" id="pinText" class="zip col-xs-12 col-md-6" placeholder="Enter ZIP code" title="Please enter valid ZIP code eg:12345" pattern="^\d{5}(?:[-\s]\d{4})?$" required>
+									  <button type="submit" value="Submit" class="button-green col-xs-12 col-md-6" onclick="getData()">Get Started</button>
+									</form>
+								</div>
+								
+								<div>
+									<p><br/><br/>*Membership offer valid for new users only. Target order of $100 or more must be placed to qualify for $15 credit, which expires 15 days after qualifing order is placed and can be applied to any order from Shipt.
+									</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				
+				<!-- Zip code result-->
+				
+				<section id="zipResult">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<!--<label id="zipval" value="Hello">DELEVERING FROM:</label>
+							<table>
+								<tr>
+									<th id="storeName"><h5>element.name</h5></th>
+								</tr>
+								<tr>
+									<td id="launchDate">element.date</td>
+								</tr>
+							</table>
+							<div class="col-sm-6 col-sm-offset-3">
+								<button class="button-green" href="#" aria-label="Get Started">Get Started</button>
+							</div>-->
+						</div>
+					</div>
+				</section>
+				
+				
+				<!-- three column layout -->
+				<section class="targetAds">
+					<div class="row">
+						<h3>Everything you love about <br/> Target at your fingertips</h3>
+						<div class="col-sm-4">
+							<img alt="Bootstrap Image Preview" src="img/Step1.png" />
+							<h4>
+								Scroll throug the aisles.
+							</h4>
+							<p>
+								Create an order from your local store in our app or on our website.
+							</p>
+							<p>
+								<a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+						<div class="col-sm-4">
+							<img alt="Bootstrap Image Preview" src="img/Step2.png" />
+							<h4>
+								Our shoppers work their magic.
+							</h4>
+							<p>
+								Connent your shopper and get live updates from the aisles.
+							</p>
+							<p>
+								<a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+						<div class="col-sm-4">
+							<img alt="Bootstrap Image Preview" src="img/Step3.png" />
+							<h4>
+								We deliver your groceries.
+							</h4>
+							<p>
+								Schedule a delivery,and your order will arive in as soon as 1 hour.
+							</p>
+							<p>
+								<a class="btn" href="#">View details »</a>
+								
+							</p>
+						</div>
+					</div>
+				</section>
+				<!-- get started button -->
+				<section class="getStartedBtn">
+					<button class="button-green center" aria-label="Get Started">Get Started</button>
+				</section>
+				<!--footer-->
+				<footer>
+					<p><span aria-label="Copyright">©</span> 2018 Shipt, Inc. and its services are not necessarily affiliated or endorsed by the retailers on this site.</p>
+				</footer>
+		</div>
+	</body>
+</html>
