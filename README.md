@@ -7,3 +7,4 @@
 * HTML5, bootstrap, JS landing page: index.html
 * Call the zip code API (https://shipt-zip-code-test-api.herokuapp.com/api/zip_codes/{code})for the relevant zip code data.
 When a user inputs a zip code in the form, a new section underneath the hero display the store names and launch dates
+*Test data can be found with the following zip codes: 35203, 98001, 99515. 
